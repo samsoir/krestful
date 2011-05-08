@@ -53,7 +53,7 @@ For example:
     
          protected $_accept = array(
               'text/html',
-              'application/json'
+              'application/json',
               'application/xml'
          );
     
