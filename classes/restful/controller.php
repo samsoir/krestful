@@ -43,16 +43,16 @@ class Restful_Controller extends Kohana_Controller_REST {
 	 */
 	public function __construct(Request $request,
 	                            Response $response,
-	                            array $accept = array(),
-	                            array $accept_charset = array(),
-	                            array $accept_language = array(),
+	                            array $accept = NULL,
+	                            array $accept_charset = NULL,
+	                            array $accept_language = NULL,
 	                            $accept_strict = FALSE)
 	{
 		parent::__construct($request, $response);
 
-		$this->accept($accept);
-		$this->accept_charset($accept_charset);
-		$this->accept_language($accept_language);
+		($accept !== NULL) AND $this->accept($accept);
+		($accept !== NULL) AND $this->accept_charset($accept_charset);
+		($accept !== NULL) AND $this->accept_language($accept_language);
 
 		$this->_accept_strict = (bool) $accept_strict;
 
